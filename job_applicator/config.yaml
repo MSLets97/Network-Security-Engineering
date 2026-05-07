@@ -1,0 +1,84 @@
+# ============================================================
+# Job Applicator Configuration
+# Fill in your details before running.
+# ============================================================
+
+profile:
+  full_name: "Your Full Name"
+  email: "your.email@example.com"
+  phone: "+27 XX XXX XXXX"
+  location: "South Africa"
+  city: "Cape Town"
+  province: "Western Cape"
+  linkedin_url: "https://linkedin.com/in/your-profile"
+  portfolio_url: ""
+  resume_path: "resume.pdf"   # Absolute or relative path to your resume PDF
+
+  # Common application Q&A (used to auto-fill forms)
+  years_of_experience: "3"
+  highest_education: "Bachelor's Degree"
+  notice_period: "1 month"
+  willing_to_relocate: "No"
+  work_authorization: "Yes"   # Are you authorized to work in SA?
+  sa_citizen: "Yes"
+
+search:
+  keywords:
+    - "Network Security Engineer"
+    - "Cybersecurity Analyst"
+    - "Security Operations"
+    - "IT Security"
+  locations:
+    - "South Africa"
+    - "Cape Town"
+    - "Johannesburg"
+    - "Remote"
+  job_type: "full_time"       # full_time | part_time | contract | internship
+  experience_level:
+    - "mid_level"
+    - "senior"
+  remote_preference: "any"    # remote | hybrid | onsite | any
+  salary_min: 30000           # Minimum monthly salary in ZAR (used as filter where possible)
+  exclude_keywords:           # Jobs containing these words are skipped
+    - "unpaid"
+    - "volunteer"
+
+platforms:
+  linkedin:
+    enabled: true
+    email: "your.email@example.com"
+    password: "YOUR_LINKEDIN_PASSWORD"
+    easy_apply_only: true     # Only apply to LinkedIn Easy Apply jobs
+
+  indeed:
+    enabled: true
+    email: "your.email@example.com"
+    password: "YOUR_INDEED_PASSWORD"
+    country_domain: "za"      # za = South Africa  |  com = Global
+
+  glassdoor:
+    enabled: true
+    email: "your.email@example.com"
+    password: "YOUR_GLASSDOOR_PASSWORD"
+
+  remoteco:
+    enabled: true             # No login required
+
+  weworkremotely:
+    enabled: true             # No login required
+
+  pnet:
+    enabled: true
+    email: "your.email@example.com"
+    password: "YOUR_PNET_PASSWORD"
+
+  govza:
+    enabled: true             # Scrapes DPSA circular & e-recruitment.gov.za
+
+settings:
+  dry_run: true               # TRUE = find jobs and log them, do NOT submit applications
+  max_applications_per_run: 15
+  delay_between_applications: 45   # Seconds between applications (be polite to servers)
+  headless: false             # false = show browser window so you can watch / intervene
+  log_level: "INFO"
+  output_dir: "output"        # Directory where logs and reports are saved
