@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>J.A.R.V.I.S. — Just A Rather Very Intelligent System</title>
+  <link rel="stylesheet" href="/static/css/jarvis.css" />
+</head>
+<body>
+  <!-- HUD corner decorations -->
+  <div class="hud-corner top-left"></div>
+  <div class="hud-corner top-right"></div>
+  <div class="hud-corner bottom-left"></div>
+  <div class="hud-corner bottom-right"></div>
+
+  <!-- Animated background grid -->
+  <canvas id="grid-canvas"></canvas>
+
+  <div class="app-shell">
+
+    <!-- ── Header ─────────────────────────────────────── -->
+    <header class="hud-header">
+      <div class="logo-block">
+        <div class="arc-reactor">
+          <div class="arc-inner"></div>
+        </div>
+        <div class="logo-text">
+          <span class="logo-main">J.A.R.V.I.S.</span>
+          <span class="logo-sub">Just A Rather Very Intelligent System · v1.0</span>
+        </div>
+      </div>
+      <div class="header-stats">
+        <div class="stat" id="stat-status">
+          <span class="stat-label">STATUS</span>
+          <span class="stat-value" id="status-text">INITIALISING</span>
+        </div>
+        <div class="stat">
+          <span class="stat-label">MODEL</span>
+          <span class="stat-value">OPUS 4.7</span>
+        </div>
+        <div class="stat">
+          <span class="stat-label">THINKING</span>
+          <span class="stat-value">ADAPTIVE</span>
+        </div>
+      </div>
+      <div class="header-actions">
+        <button class="hud-btn" id="btn-clear" title="Clear history">CLR</button>
+        <button class="hud-btn" id="btn-voice" title="Toggle voice input">MIC</button>
+      </div>
+    </header>
+
+    <!-- ── Chat window ─────────────────────────────────── -->
+    <main class="chat-window" id="chat-window">
+      <div class="message system-msg">
+        <div class="msg-label">SYSTEM</div>
+        <div class="msg-body">JARVIS online. All systems nominal. How may I assist you, sir?</div>
+      </div>
+    </main>
+
+    <!-- ── Input bar ───────────────────────────────────── -->
+    <footer class="input-bar">
+      <div class="input-wrapper">
+        <span class="input-prompt">YOU ▶</span>
+        <textarea
+          id="user-input"
+          class="hud-input"
+          rows="1"
+          placeholder="Enter query… (Shift+Enter for newline, Enter to send)"
+          autofocus
+        ></textarea>
+        <button class="send-btn" id="btn-send" title="Send">&#9658;</button>
+      </div>
+      <div class="thinking-bar" id="thinking-bar">
+        <div class="thinking-dots">
+          <span></span><span></span><span></span>
+        </div>
+        <span class="thinking-label">Processing…</span>
+      </div>
+    </footer>
+
+  </div>
+
+  <script src="https://cdn.socket.io/4.7.5/socket.io.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <script src="/static/js/jarvis.js"></script>
+</body>
+</html>
